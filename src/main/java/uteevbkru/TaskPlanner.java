@@ -11,14 +11,14 @@ public class TaskPlanner {
 	public TaskPlanner(int s){
 		que = new PriorityQueue<>(s, priorComp);
 	}	
-	public void addTask(Task A){
-		que.add(A);
-		System.out.println(que.element().getName());
+	public boolean addTask(Task A){
+		boolean bol = que.add(A);
+		return bol;
 	}
 	public Task pollTask(){
-		Task a = que.poll();
-		return a;
+		return que.poll();
 	}
+	
 	public int sizeTaskPlanner(){
 		return que.size();
 	}
